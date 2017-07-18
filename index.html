@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function convertToEmoji() {
+	var msg = document.getElementById("msg").value.toLowerCase();
+    var chars = msg.split('');
+	var i;
+	var emojifiedMsg = "";
+	for (i = 0; i < chars.length; i++) {
+		if (chars[i] == ' ') {
+			emojifiedMsg += " _ "
+        }
+		else {
+			emojifiedMsg += ":regional_indicator_" + chars[i] + ": ";
+        }
+    }
+    document.getElementById('emsg').innerHTML = "<p> Emojified Message: </p>" + emojifiedMsg;
+}
+</script>
+</head>
+
+<body>
+
+<form action="javascript:convertToEmoji()">
+Message: <input type="text" id="msg" value="">
+<input type="submit" value="Submit">
+</form>
+<div id="emsg">
+</div>
+
+
+</body>
+
+
+
+</html>
+
+
