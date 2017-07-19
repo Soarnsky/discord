@@ -2,29 +2,34 @@
 <html>
 <head>
 <script type="text/javascript">
-function convertToEmoji() {
-	var msg = document.getElementById("msg").value.toLowerCase();
-    var chars = msg.split('');
-	var i;
-	var emojifiedMsg = "";
-	for (i = 0; i < chars.length; i++) {
-		if (chars[i] == ' ') {
-			emojifiedMsg += "   "
-        }
-		else {
-			emojifiedMsg += ":regional_indicator_" + chars[i] + ": ";
-        }
-    }
-    document.getElementById('emsg').innerHTML = "<p> Emojified Message: </p><pre>" + emojifiedMsg + "</pre>";
-}
+	function convertToEmoji() {
+		var msg = document.getElementById("msg").value.toLowerCase();
+	    var chars = msg.split('');
+		var i;
+		var emojifiedMsg = "";
+		for (i = 0; i < chars.length; i++) {
+			if (chars[i] == ' ') {
+				emojifiedMsg += "   "
+	        }
+			else {
+				emojifiedMsg += ":regional_indicator_" + chars[i] + ": ";
+	        }
+	    }
+	    document.getElementById('emsg').innerHTML = emojifiedMsg;
+	}
+	
 </script>
 </head>
 
 <body>
 
 <form action="javascript:convertToEmoji()">
-Message: <input type="text" id="msg" value="">
-<input type="submit" value="Submit">
+Message <button>Convert</button>
+<br><textarea id="msg" value=""></textarea>
+<br>Emojified Message
+<br><textarea id="emsg"></textarea>
+
+
 </form>
 <div id="emsg">
 </div>
